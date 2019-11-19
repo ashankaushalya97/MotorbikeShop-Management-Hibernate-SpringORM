@@ -13,10 +13,6 @@ public class OrderDAOImpl extends CrudDAOImpl<Orders,String> implements OrdersDA
 
     @Override
     public String getLastOrderId() throws Exception {
-        ResultSet rst =CrudUtil.execute("SELECT orderId FROM orders ORDER BY orderId DESC LIMIT 1");
-        if(rst.next()){
-            return rst.getString(1);
-        }
-        return null;
+        return (String) session.createNativeQuery("SELECT orderId FROM orders ORDER BY orderId DESC LIMIT 1").uniqueResult();
     }
 }

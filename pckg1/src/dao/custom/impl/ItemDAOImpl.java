@@ -14,24 +14,13 @@ public class ItemDAOImpl extends CrudDAOImpl<Item,String> implements ItemDAO {
 
     @Override
     public String getLastItemId() throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT itemId FROM item ORDER BY itemId DESC LIMIT 1");
-        if(rst.next()){
-            return rst.getString(1);
-        }
-        return null;
+        return (String) session.createNativeQuery("SELECT itemId FROM item ORDER BY itemId DESC LIMIT 1").uniqueResult();
     }
 
     @Override
     public List<Item> searchItems(String text) throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM item\n" +
-                "WHERE itemId LIKE ? OR categoryId LIKE ? OR\n" +
-                "brand LIKE ? OR description LIKE ? OR qtyOnHand LIKE ? OR buyPrice LIKE ? OR unitPrice LIKE ?",text,text,text,text,text,text,text);
-        List<Item> items = new ArrayList<>();
-//        while(rst.next()){
-//            items.add(new Item(rst.getString(1),rst.getString(2),rst.getString(3),
-//                    rst.getString(4),rst.getInt(5),rst.getDouble(6),rst.getDouble(7)
-//            ));
-//        }
-        return items;
+        return session.createNativeQuery("SELECT * FROM item WHERE itemId LIKE ?1 OR categoryId LIKE ?2 OR brand LIKE ?3 OR description LIKE ?4 OR qtyOnHand LIKE ?5 OR buyPrice LIKE ?6 OR unitPrice LIKE ?7")
+            .setParameter(1,text).setParameter(2,text).setParameter(3,text).setParameter(4,text).setParameter(5,text)
+                .setParameter(6,text).setParameter(7,text).list();
     }
 }

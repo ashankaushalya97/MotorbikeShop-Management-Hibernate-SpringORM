@@ -14,22 +14,13 @@ public class DeliveryDAOImpl extends CrudDAOImpl<Delivery,DeliveryPK> implements
 
     @Override
     public String getLastDeliveryId() throws Exception {
-        ResultSet rst =CrudUtil.execute("SELECT deliveryId FROM delivery ORDER BY deliveryId DESC LIMIT 1");
-        if(rst.next()){
-            return rst.getString(1);
-        }
-        return null;
+       return (String) session.createNativeQuery("SELECT deliveryId FROM delivery ORDER BY deliveryId DESC LIMIT 1").uniqueResult();
+
     }
 
     @Override
     public List<Delivery> searchDelivery(String text) throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM delivery WHERE deliveryId LIKE ? OR " +
-                "orderId LIKE ? OR address LIKE ? OR states LIKE ?",text,text,text,text);
-        List<Delivery> search = new ArrayList<>();
-        while (rst.next()){
-            search.add(new Delivery(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
-        }
-
-        return search;
+       return session.createNativeQuery("SELECT * FROM delivery WHERE deliveryId LIKE ?1 OR orderId LIKE ?2 OR address LIKE ?3 OR states LIKE ?")
+                .setParameter(1,text).setParameter(2,text).setParameter(3,text).list();
     }
 }
