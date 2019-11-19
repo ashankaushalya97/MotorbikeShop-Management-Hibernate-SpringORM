@@ -145,13 +145,10 @@ public class InventoryController {
                         categoryId=category.getCategoryId();
                     }
                 }
-
-                result = itemBO.saveItem(new ItemDTO(txtID.getText(),categoryId,txtBrand.getText()
+                itemBO.saveItem(new ItemDTO(txtID.getText(),categoryId,txtBrand.getText()
                         ,txtDescription.getText(),Integer.parseInt(txtQtyOnHand.getText()),Double.parseDouble(txtBuyPrice.getText())
                         ,Double.parseDouble(txtUnitPrice.getText())));
-                if(!result){
-                    throw new RuntimeException("Something went wrong!");
-                }
+
                 btnNew_OnAction(actionEvent);
                 tbleInventory.getItems().clear();
                 initialize();
@@ -167,12 +164,9 @@ public class InventoryController {
                         categoryId=category.getCategoryId();
                     }
                 }
-                result= itemBO.updateItem(new ItemDTO(txtID.getText(),categoryId,txtBrand.getText()
+                itemBO.updateItem(new ItemDTO(txtID.getText(),categoryId,txtBrand.getText()
                         ,txtDescription.getText(),Integer.parseInt(txtQtyOnHand.getText()),Double.parseDouble(txtBuyPrice.getText())
                         ,Double.parseDouble(txtUnitPrice.getText())));
-                if(!result){
-                    throw new RuntimeException("Something went wrong!");
-                }
                 tbleInventory.getItems().clear();
                 comboCategory.getItems().clear();
                 initialize();
@@ -187,10 +181,8 @@ public class InventoryController {
 
     public void btnDelete_OnAction(ActionEvent actionEvent) {
         try {
-            boolean result= itemBO.deleteItem(txtID.getText());
-            if(!result){
-                throw new RuntimeException("Something went wrong!");
-            }
+            itemBO.deleteItem(txtID.getText());
+
             tbleInventory.getItems().clear();
             comboCategory.getItems().clear();
             initialize();

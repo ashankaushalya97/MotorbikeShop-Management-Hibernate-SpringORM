@@ -1,5 +1,6 @@
 package business.custom.impl;
 
+import DB.HibernateUtil;
 import business.custom.OrderBO;
 import dao.DAOFactory;
 import dao.DAOTypes;
@@ -9,8 +10,10 @@ import dao.custom.OrdersDAO;
 import dao.custom.QueryDAO;
 import dto.OrderDTO;
 import dto.OrderDTO2;
+import entity.Admin;
 import entity.CustomEntity;
 import entity.Orders;
+import org.hibernate.Session;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -24,7 +27,13 @@ public class OrderBOImpl implements OrderBO {
 
     @Override
     public String getLastOrderId() throws Exception {
-        return ordersDAO.getLastOrderId();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            ordersDAO.setSession(session);
+            session.beginTransaction();
+            String lastOrderId = ordersDAO.getLastOrderId();
+            session.getTransaction().commit();
+            return lastOrderId;
+        }
     }
 
     @Override
@@ -77,33 +86,47 @@ public class OrderBOImpl implements OrderBO {
 
     @Override
     public List<String> getAllOrderIDs() throws Exception {
-        List<Orders> allOrders= ordersDAO.findAll();
-        List<String> ids = new ArrayList<>();
-        for (Orders allOrder : allOrders) {
-            ids.add(allOrder.getOrderId());
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            ordersDAO.setSession(session);
+            session.beginTransaction();
+            List<Orders> allOrders= ordersDAO.findAll();
+            List<String> ids = new ArrayList<>();
+            for (Orders allOrder : allOrders) {
+                ids.add(allOrder.getOrderId());
+            }
+            session.getTransaction().commit();
+            return ids;
         }
-        return ids;
     }
 
     @Override
     public List<OrderDTO2> getOrderInfo() throws Exception {
-        List<CustomEntity> orders = queryDAO.getOrderInfo();
-        List<OrderDTO2> all = new ArrayList<>();
-        for (CustomEntity order : orders) {
-            all.add(new OrderDTO2(order.getOrderId(),order.getDate(),order.getCustomerId(),order.getName(),order.getTotal()));
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            ordersDAO.setSession(session);
+            session.beginTransaction();
+            List<CustomEntity> orders = queryDAO.getOrderInfo();
+            List<OrderDTO2> all = new ArrayList<>();
+            for (CustomEntity order : orders) {
+                all.add(new OrderDTO2(order.getOrderId(),order.getDate(),order.getCustomerId(),order.getName(),order.getTotal()));
+            }
+            session.getTransaction().commit();
+            return all;
         }
-
-        return all;
     }
 
     @Override
     public List<OrderDTO2> searchOrder(String text) throws Exception {
-        List<CustomEntity> orders = queryDAO.searchOrder(text);
-        List<OrderDTO2> all = new ArrayList<>();
-        for (CustomEntity order : orders) {
-            all.add(new OrderDTO2(order.getOrderId(),order.getDate(),order.getCustomerId(),order.getName(),order.getTotal()));
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            ordersDAO.setSession(session);
+            session.beginTransaction();
+            List<CustomEntity> orders = queryDAO.searchOrder(text);
+            List<OrderDTO2> all = new ArrayList<>();
+            for (CustomEntity order : orders) {
+                all.add(new OrderDTO2(order.getOrderId(),order.getDate(),order.getCustomerId(),order.getName(),order.getTotal()));
+            }
+            session.getTransaction().commit();
+            return all;
         }
-        return all;
     }
 
 

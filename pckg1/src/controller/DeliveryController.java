@@ -182,12 +182,10 @@ public class DeliveryController {
         boolean result = false;
         if(btnSave.getText().equals("Save")){
             try {
-                result=deliveryBO.saveDelivery(new DeliveryDTO(txtID.getText(),comboOrderID.getSelectionModel().getSelectedItem(),
+                deliveryBO.saveDelivery(new DeliveryDTO(txtID.getText(),comboOrderID.getSelectionModel().getSelectedItem(),
                         txtAddress.getText(),comboStates.getSelectionModel().getSelectedItem()
                 ));
-                if(!result){
-                    throw new RuntimeException("Something went wrong!");
-                }
+
                 table.add(new DeliveryTM(txtID.getText(),comboOrderID.getSelectionModel().getSelectedItem(),txtAddress.getText()
                 ,comboStates.getSelectionModel().getSelectedItem()));
                 tblDelivery.refresh();
@@ -200,10 +198,7 @@ public class DeliveryController {
 
         }else{
             try {
-                result =  deliveryBO.updateDelivery(new DeliveryDTO(txtID.getText(),comboOrderID.getSelectionModel().getSelectedItem(),txtAddress.getText(),comboStates.getSelectionModel().getSelectedItem()));
-                if(!result){
-                    throw new RuntimeException("Something went wrong!");
-                }
+                deliveryBO.updateDelivery(new DeliveryDTO(txtID.getText(),comboOrderID.getSelectionModel().getSelectedItem(),txtAddress.getText(),comboStates.getSelectionModel().getSelectedItem()));
                 tblDelivery.getItems().clear();
                 comboOrderID.getItems().clear();
                 comboStates.getItems().clear();
@@ -219,10 +214,7 @@ public class DeliveryController {
     public void btnDelete_OnAction(ActionEvent actionEvent) {
         DeliveryTM selectedItem = tblDelivery.getSelectionModel().getSelectedItem();
         try {
-            boolean result= deliveryBO.deleteDelivery(selectedItem.getDeliveryId(),selectedItem.getOrderId());
-            if(!result){
-                throw new RuntimeException("Something went wrong!");
-            }
+            deliveryBO.deleteDelivery(selectedItem.getDeliveryId(),selectedItem.getOrderId());
             tblDelivery.getItems().clear();
             comboOrderID.getItems().clear();
             comboStates.getItems().clear();

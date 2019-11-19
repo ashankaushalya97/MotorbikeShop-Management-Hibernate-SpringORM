@@ -14,12 +14,12 @@ public class ItemDAOImpl extends CrudDAOImpl<Item,String> implements ItemDAO {
 
     @Override
     public String getLastItemId() throws Exception {
-        return (String) session.createNativeQuery("SELECT itemId FROM item ORDER BY itemId DESC LIMIT 1").uniqueResult();
+        return (String) session.createNativeQuery("SELECT item_id FROM Item ORDER BY item_id DESC LIMIT 1").uniqueResult();
     }
 
     @Override
     public List<Item> searchItems(String text) throws Exception {
-        return session.createNativeQuery("SELECT * FROM item WHERE itemId LIKE ?1 OR categoryId LIKE ?2 OR brand LIKE ?3 OR description LIKE ?4 OR qtyOnHand LIKE ?5 OR buyPrice LIKE ?6 OR unitPrice LIKE ?7")
+        return session.createNativeQuery("SELECT * FROM Item WHERE item_id LIKE ?1 OR category_id LIKE ?2 OR brand LIKE ?3 OR description LIKE ?4 OR qty_on_hand LIKE ?5 OR buy_price LIKE ?6 OR unit_price LIKE ?7")
             .setParameter(1,text).setParameter(2,text).setParameter(3,text).setParameter(4,text).setParameter(5,text)
                 .setParameter(6,text).setParameter(7,text).list();
     }
