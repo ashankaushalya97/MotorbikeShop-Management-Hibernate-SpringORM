@@ -1,5 +1,6 @@
 package dao.custom.impl;
 
+import dao.CrudDAOImpl;
 import dao.CrudUtil;
 import dao.custom.DeliveryDAO;
 import entity.Delivery;
@@ -9,41 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeliveryDAOImpl implements DeliveryDAO {
-
-    @Override
-    public List<Delivery> findAll() throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM delivery");
-        List<Delivery> deliveries = new ArrayList<>();
-        while (rst.next()){
-            deliveries.add(new Delivery(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4)));
-        }
-        return deliveries;
-    }
-
-    @Override
-    public Delivery find(DeliveryPK deliveryPK) throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT * FROM delivery WHERE  deliveryId=? AND orderId=?",deliveryPK.getDeliveryId(),deliveryPK.getOrderId());
-        if(rst.next()){
-            return new Delivery(rst.getString(1),rst.getString(2),rst.getString(3),rst.getString(4));
-        }
-        return null;
-    }
-
-    @Override
-    public void save(Delivery entity) throws Exception {
-//        return CrudUtil.execute("INSERT INTO delivery VALUES (?,?,?,?)",entity.getDeliveryPK().getDeliveryId(),entity.getDeliveryPK().getOrderId(),entity.getAddress(),entity.getStates());
-    }
-
-    @Override
-    public void update(Delivery entity) throws Exception {
-//        return CrudUtil.execute("UPDATE delivery SET address=?, states=? WHERE deliveryId=? AND orderId=?",entity.getAddress(),entity.getStates(),entity.getDeliveryPK().getDeliveryId(),entity.getDeliveryPK().getOrderId());
-    }
-
-    @Override
-    public void delete(DeliveryPK deliveryPK) throws Exception {
-//        return CrudUtil.execute("DELETE FROM delivery WHERE deliveryId=? AND orderId=?",deliveryPK.getDeliveryId(),deliveryPK.getOrderId());
-    }
+public class DeliveryDAOImpl extends CrudDAOImpl<Delivery,DeliveryPK> implements DeliveryDAO {
 
     @Override
     public String getLastDeliveryId() throws Exception {

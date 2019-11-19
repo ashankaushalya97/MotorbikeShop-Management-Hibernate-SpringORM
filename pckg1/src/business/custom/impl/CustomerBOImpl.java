@@ -32,22 +32,44 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public void updateCustomer(CustomerDTO customer) throws Exception {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            customerDAO.setSession(session);
+            session.beginTransaction();
+
+            customerDAO.update(new Customer(customer.getCustomerId(),customer.getName(),customer.getContact()));
+
+            session.getTransaction().commit();
+        }
 //        return customerDAO.update(new Customer(customer.getCustomerId(),customer.getName(),customer.getContact()));
     }
 
     @Override
     public void deleteCustomer(String id) throws Exception {
-//        return customerDAO.delete(id);
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            customerDAO.setSession(session);
+            session.beginTransaction();
+
+            customerDAO.delete(id);
+            session.getTransaction().commit();
+        }
+        //        return customerDAO.delete(id);
     }
 
     @Override
     public List<CustomerDTO> findAllCustomers() throws Exception {
-        List<Customer> all = customerDAO.findAll();
-        List<CustomerDTO> customerDTOS = new ArrayList<>();
-        for (Customer customer : all) {
-            customerDTOS.add(new CustomerDTO(customer.getCustomerId(),customer.getName(),customer.getContact()));
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            customerDAO.setSession(session);
+            session.beginTransaction();
+
+            List<Customer> all = customerDAO.findAll();
+            List<CustomerDTO> customerDTOS = new ArrayList<>();
+            for (Customer customer : all) {
+                customerDTOS.add(new CustomerDTO(customer.getCustomerId(),customer.getName(),customer.getContact()));
+            }
+
+            session.getTransaction().commit();
+            return customerDTOS;
         }
-        return customerDTOS;
     }
 
     @Override

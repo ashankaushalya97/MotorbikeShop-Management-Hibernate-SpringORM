@@ -35,15 +35,15 @@ public class CustomerController {
 
         ObservableList<CustomerTM> customers = tbleCustomer.getItems();
         customers.clear();
-//        try {
-//            List<CustomerDTO> all = customerBO.findAllCustomers();
-//            for (CustomerDTO customerDTO : all) {
-//                customers.add(new CustomerTM(customerDTO.getCustomerId(),customerDTO.getName(),customerDTO.getContact()));
-//            }
-//        } catch (Exception e) {
-//            new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
-//            Logger.getLogger("lk.ijse.dep.rcr.controller").log(Level.SEVERE, null,e);
-//        }
+        try {
+            List<CustomerDTO> all = customerBO.findAllCustomers();
+            for (CustomerDTO customerDTO : all) {
+                customers.add(new CustomerTM(customerDTO.getCustomerId(),customerDTO.getName(),customerDTO.getContact()));
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,"Something went wrong!").show();
+            Logger.getLogger("lk.ijse.dep.rcr.controller").log(Level.SEVERE, null,e);
+        }
 
         btnSave.setText("Save");
         txtID.setDisable(true);
@@ -89,10 +89,7 @@ public class CustomerController {
             }
         }else{
             try {
-//                result= customerBO.updateCustomer(new CustomerDTO(txtID.getText(),txtName.getText(),txtContact.getText()));
-                if(!result){
-                    throw new RuntimeException("Something went wrong!");
-                }
+                customerBO.updateCustomer(new CustomerDTO(txtID.getText(),txtName.getText(),txtContact.getText()));
                 initialize();
                 btnNew_OnAction(actionEvent);
                 new Alert(Alert.AlertType.INFORMATION,"User successfully updated!").show();
@@ -108,19 +105,16 @@ public class CustomerController {
 
     public void btnDelete_OnAction(ActionEvent actionEvent) {
         try {
-//           boolean result = customerBO.deleteCustomer(txtID.getText());
-//           if(!result){
-//               throw new RuntimeException("Something went wrong!");
-//           }
-//            new Alert(Alert.AlertType.INFORMATION,"User successfully deleted!").show();
-//           ObservableList<CustomerTM> table = tbleCustomer.getItems();
-//            for (CustomerTM customerTM : table) {
-//                if(txtID.getText().equals(customerTM.getCustomerId())){
-//                    table.remove(customerTM);
-//                    btnNew_OnAction(actionEvent);
-//                    return;
-//                }
-//            }
+           customerBO.deleteCustomer(txtID.getText());
+            new Alert(Alert.AlertType.INFORMATION,"User successfully deleted!").show();
+           ObservableList<CustomerTM> table = tbleCustomer.getItems();
+            for (CustomerTM customerTM : table) {
+                if(txtID.getText().equals(customerTM.getCustomerId())){
+                    table.remove(customerTM);
+                    btnNew_OnAction(actionEvent);
+                    return;
+                }
+            }
 
 
         } catch (Exception e) {
