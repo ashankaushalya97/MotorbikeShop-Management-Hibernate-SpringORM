@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class CrudDAOImpl<T extends SuperEntity,ID extends Serializable> implements CrudDAO<T,ID> {
 
     protected Session session;
-    Class<T> entity;
+    private Class<T> entity;
 
     public CrudDAOImpl(){
         entity = (Class<T>) ((ParameterizedType)(this.getClass().getGenericSuperclass())).getActualTypeArguments()[0];
@@ -42,7 +42,7 @@ public abstract class CrudDAOImpl<T extends SuperEntity,ID extends Serializable>
     public void delete(ID id) throws Exception {
         session.delete(session.load(entity,id));
     }
-
+    @Override
     public void setSession(Session session){
         this.session=session;
     }

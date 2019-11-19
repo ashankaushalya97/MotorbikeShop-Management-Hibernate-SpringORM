@@ -14,11 +14,9 @@ public class AdminDAOImpl extends CrudDAOImpl<Admin,String> implements AdminDAO 
 
     @Override
     public boolean authentication(Admin admin) throws Exception {
-        ResultSet rst = CrudUtil.execute("SELECT COUNT(username) FROM admin WHERE username=? AND password=? ",admin.getUsername(),admin.getPassword());
-        if(rst.next()){
-            if(rst.getDouble(1)==1){
-                return true;
-            }
+        int result = (int) session.createNativeQuery("SELECT COUNT(username) FROM admin WHERE username=?1 AND password=?2").setParameter(1, admin.getUsername()).setParameter(2, admin.getPassword()).uniqueResult();
+        if(result==1){
+            return true;
         }
         return false;
     }

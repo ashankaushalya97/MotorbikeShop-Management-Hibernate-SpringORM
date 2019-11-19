@@ -27,7 +27,6 @@ public class CustomerBOImpl implements CustomerBO {
 
             session.getTransaction().commit();
         }
-//        return customerDAO.save(new Customer(customer.getCustomerId(),customer.getName(),customer.getContact()));
     }
 
     @Override
@@ -40,7 +39,6 @@ public class CustomerBOImpl implements CustomerBO {
 
             session.getTransaction().commit();
         }
-//        return customerDAO.update(new Customer(customer.getCustomerId(),customer.getName(),customer.getContact()));
     }
 
     @Override
@@ -52,7 +50,6 @@ public class CustomerBOImpl implements CustomerBO {
             customerDAO.delete(id);
             session.getTransaction().commit();
         }
-        //        return customerDAO.delete(id);
     }
 
     @Override
@@ -88,11 +85,16 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public List<CustomerDTO> searchCustomer(String text) throws Exception {
-        List<Customer> search = customerDAO.searchCustomers(text);
-        List<CustomerDTO> customers = new ArrayList<>();
-        for (Customer customer : search) {
-            customers.add(new CustomerDTO(customer.getCustomerId(),customer.getName(),customer.getContact()));
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            customerDAO.setSession(session);
+            session.beginTransaction();
+            List<Customer> search = customerDAO.searchCustomers(text);
+            List<CustomerDTO> customers = new ArrayList<>();
+            for (Customer customer : search) {
+                customers.add(new CustomerDTO(customer.getCustomerId(),customer.getName(),customer.getContact()));
+            }
+            session.getTransaction().commit();
+            return customers;
         }
-        return customers;
     }
 }

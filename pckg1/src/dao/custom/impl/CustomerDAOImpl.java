@@ -19,11 +19,7 @@ public class CustomerDAOImpl extends CrudDAOImpl<Customer,String> implements Cus
 
     @Override
     public List<Customer> searchCustomers(String text) throws Exception {
-        List<Customer> search= new ArrayList<>();
-        ResultSet rst=CrudUtil.execute("SELECT * FROM customer WHERE customerId like ? or name like ? or contact like ?",text,text,text);
-        while (rst.next()){
-            search.add(new Customer(rst.getString(1),rst.getString(2),rst.getString(3)));
-        }
-        return search;
+        return session.createNativeQuery("SELECT * FROM Customer WHERE customer_id like ?1 or name like ?2 or contact like ?3").setParameter(1,text).setParameter(2,text).setParameter(3,text).list();
+
     }
 }

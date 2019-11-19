@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface DeliveryBO extends SuperBO {
 
-    boolean saveDelivery(DeliveryDTO delivery)throws Exception;
+    void saveDelivery(DeliveryDTO delivery)throws Exception;
 
-    boolean updateDelivery(DeliveryDTO delivery)throws Exception;
+    void updateDelivery(DeliveryDTO delivery)throws Exception;
 
-    boolean deleteDelivery(String deliveryId,String orderId)throws Exception;
+    void deleteDelivery(String deliveryId,String orderId)throws Exception;
 
     List<DeliveryDTO> findAllDeliveries()throws Exception;
 

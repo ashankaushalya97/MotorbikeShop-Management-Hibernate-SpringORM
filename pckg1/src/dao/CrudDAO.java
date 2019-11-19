@@ -1,6 +1,7 @@
 package dao;
 
 import entity.SuperEntity;
+import org.hibernate.Session;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface CrudDAO <T extends SuperEntity,ID> extends SuperDAO {
     public void update(T entity) throws Exception;
 
     public void delete(ID id) throws Exception;
+
+    public void setSession(Session session);
 }

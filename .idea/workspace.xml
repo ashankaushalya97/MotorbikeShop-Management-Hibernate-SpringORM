@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd0bd34-fb90-44ae-b5ad-827dc22e1e51" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1fa5479-9d7e-4d20-b6e2-fff997e3ae75.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/AdminDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/AdminDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CategoryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CategoryDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CustomerDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CustomerDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CustomerDAOImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/DeliveryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/DeliveryDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDetailDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/QueryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/QueryDAOImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574054755939</updated>
       <workItem from="1574054757329" duration="18026000" />
-      <workItem from="1574163956578" duration="1822000" />
+      <workItem from="1574163956578" duration="4578000" />
     </task>
     <servers />
   </component>
