@@ -3,28 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4dd0bd34-fb90-44ae-b5ad-827dc22e1e51" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/AppInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/AppInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/DeliveryBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/DeliveryBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/ItemBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/ItemBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/CategoryBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/CategoryBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/CustomerBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/CustomerBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/DeliveryBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/DeliveryBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/DeliveryBOImplTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/ItemBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/ItemBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/LoginBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/LoginBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/OrderBOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/OrderBOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/OrderBOImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/business/custom/impl/OrderBOImplTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/controller/DeliveryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/controller/DeliveryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/controller/InventoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/controller/InventoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/CrudDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/CrudDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/CrudDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/CrudDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/AdminDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/AdminDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CustomerDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/CustomerDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/DeliveryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/DeliveryDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/ItemDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/ItemDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/OrderDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/QueryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pckg1/dao/custom/impl/QueryDAOImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +142,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@222ab217" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@222ab217" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5c66fbb4" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -181,7 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574054755939</updated>
       <workItem from="1574054757329" duration="18026000" />
-      <workItem from="1574163956578" duration="7080000" />
+      <workItem from="1574163956578" duration="8568000" />
     </task>
     <servers />
   </component>
