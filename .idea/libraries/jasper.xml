@@ -16,9 +16,6 @@
       <root url="jar://$PROJECT_DIR$/lib/jasperReports/jasperreports-javaflow-6.9.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jasperReports/jasperreports-metadata-6.9.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jasperReports/joda-time-2.10.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jasperReports/org.springframework.beans-3.1.2.release.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jasperReports/org.springframework.core-3.1.0.release.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jasperReports/spring-asm-3.1.4.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/jasperReports/commons-beanutils-1.9.4-javadoc.jar!/" />

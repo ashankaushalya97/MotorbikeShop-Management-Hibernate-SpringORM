@@ -10,7 +10,7 @@
     <orderEntry type="library" name="fontawesomefx-8.1" level="project" />
     <orderEntry type="library" name="hibernate" level="project" />
     <orderEntry type="library" name="jasper" level="project" />
-    <orderEntry type="library" name="spring-aop-5.1.9.RELEASE-javadoc" level="project" />
     <orderEntry type="library" name="cryptography" level="project" />
+    <orderEntry type="library" name="spring" level="project" />
   </component>
 </module>
