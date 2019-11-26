@@ -1,4 +1,4 @@
-# Motobike Shop Management System
+# Motorbike Shop Management System
 
 This is an application which allow users to manage their motorbike/spare parts shop. User can manage their customer details,inventory,sales and they can search through the database by categories. As a feature application provides a sales reports/ invoices / details reports to user.
 
