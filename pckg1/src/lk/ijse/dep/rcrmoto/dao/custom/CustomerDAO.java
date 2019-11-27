@@ -12,5 +12,4 @@ public interface CustomerDAO extends CrudDAO<Customer,String> {
 
     List<Customer> searchCustomers(String text)throws Exception;
 
-    void setSession (Session session);
 }

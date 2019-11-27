@@ -16,6 +16,4 @@ public interface CrudDAO <T extends SuperEntity,ID> extends SuperDAO {
     public void update(T entity) throws Exception;
 
     public void delete(ID id) throws Exception;
-
-    public void setSession(Session session);
 }

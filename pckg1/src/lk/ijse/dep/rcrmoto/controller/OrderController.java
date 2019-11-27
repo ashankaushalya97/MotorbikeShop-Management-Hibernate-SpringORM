@@ -374,11 +374,7 @@ public class OrderController {
                 }
             }
             System.out.println(customerId);
-            boolean result = orderBO.placeOrder(new OrderDTO(txtID.getText(),date,customerId,orderDetails));
-            System.out.println(result);
-            if(!result){
-                throw new RuntimeException("Something went wrong!");
-            }
+            orderBO.placeOrder(new OrderDTO(txtID.getText(),date,customerId,orderDetails));
 
 //            for (OrderTM item : tbleOrders.getItems()) {
 //                for (ItemDTO allItem : allItems) {

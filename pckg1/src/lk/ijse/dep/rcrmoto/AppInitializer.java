@@ -1,6 +1,6 @@
 package lk.ijse.dep.rcrmoto;
 
-import lk.ijse.dep.rcrmoto.DB.HibernateUtil;
+
 import lk.ijse.dep.rcrmoto.controller.LoginController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,6 @@ public class AppInitializer extends Application {
 //            e.printStackTrace();
 //        }
         System.out.println("Shutting down the connection");
-        HibernateUtil.getSessionFactory().close();
         ctx.close();
     }
 
@@ -41,6 +40,7 @@ public class AppInitializer extends Application {
         try{
             ctx= new AnnotationConfigApplicationContext();
             ctx.register(AppConfig.class);
+            ctx.register(HibernateConfig.class);
             ctx.refresh();
 
             // Let's setup the root logger

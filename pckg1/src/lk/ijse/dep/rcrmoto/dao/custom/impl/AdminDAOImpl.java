@@ -4,13 +4,14 @@ import lk.ijse.dep.rcrmoto.dao.CrudDAOImpl;
 import lk.ijse.dep.rcrmoto.dao.custom.AdminDAO;
 import lk.ijse.dep.rcrmoto.entity.Admin;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 public class AdminDAOImpl extends CrudDAOImpl<Admin,String> implements AdminDAO {
 
     @Override
     public boolean authentication(Admin admin) throws Exception {
-        int result = (int) session.createNativeQuery("SELECT COUNT(username) FROM admin WHERE username=?1 AND password=?2").setParameter(1, admin.getUsername()).setParameter(2, admin.getPassword()).uniqueResult();
+        int result = (int) getSession().createNativeQuery("SELECT COUNT(username) FROM admin WHERE username=?1 AND password=?2").setParameter(1, admin.getUsername()).setParameter(2, admin.getPassword()).uniqueResult();
         if(result==1){
             return true;
         }
