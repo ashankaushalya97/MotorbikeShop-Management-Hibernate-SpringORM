@@ -105,14 +105,15 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pckg1/src/lk/ijse/dep/rcrmoto" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pckg1/src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="DB" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pckg1/src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pckg1/src/" />
+      <recent name="$PROJECT_DIR$/pckg1/src/lk/ijse/dep/rcrmoto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -190,7 +191,8 @@
       <workItem from="1574224461695" duration="1235000" />
       <workItem from="1574317726170" duration="601000" />
       <workItem from="1574754740860" duration="7411000" />
-      <workItem from="1574816971012" duration="3645000" />
+      <workItem from="1574816971012" duration="6007000" />
+      <workItem from="1575089855988" duration="987000" />
     </task>
     <servers />
   </component>
